@@ -23,7 +23,13 @@ cursor = connection.cursor()
 # cursor.execute('SELECT * FROM "Album" WHERE "ArtistId" = %s', [51])
 
 # Query 6 - select all tracks where the composer is "Queen" from the "Track" table
-cursor.execute('SELECT * FROM "Track" WHERE "Composer" = %s', ["Queen"])
+#cursor.execute('SELECT * FROM "Track" WHERE "Composer" = %s', ["Queen"])
+
+# Challenge 1 - Query the database using a different (existing) composer
+# cursor.execute('SELECT * FROM "Track" WHERE "Composer" = %s', ["Santana"])
+# cursor.execute('SELECT * FROM "Track" WHERE "test" = %s', ["Santana"])
+
+cursor.execute('SELECT * FROM "Artist" WHERE "ArtistId" = %s', [78])
 
 # fetch the results (multiple)
 results = cursor.fetchall()
